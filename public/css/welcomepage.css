@@ -1,0 +1,66 @@
+body {
+
+    background-position: center;
+    height: 100vh;
+
+}
+
+#main {
+    margin-top: 200px;
+}
+
+#logo {
+    font-size: 100px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    color: rgba(213, 213, 217, 0.632);
+}
+
+#getStart{
+    background-color: rgba(225, 217, 217, 0.889);
+    color: rgba(0, 0, 0, 0.744);
+    padding: 13px;
+    border-radius: 30px;
+    font-family: Poppins;
+    transition: .06s;
+}
+
+#getStart:hover{
+    transform: scale(1.1);
+    color: #6b1f9e;
+    background-color: rgb(192, 185, 185);
+    transition: .6s;
+}
+
+
+
+
+
+
+
+@media screen and (max-width: 600px) {
+    #main {
+        margin-top: 140px;
+    }
+    #logo {
+        font-size: 50px;
+    }
+    #getStart {
+        padding: 10px;
+    }
+    
+}
+
+
+
+@media screen and ( min-width:1200px) {
+    #logo{
+        font-size: 180px
+    }
+}
+
+@media screen and (min-width:2000px) {
+    #logo{
+        font-size: 500px
+    }
+}

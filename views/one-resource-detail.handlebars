@@ -1,11 +1,11 @@
-<div class="section mt-5">
+<div class="section mt-5 pt-5">
   <div class="container-fluid">
     <div class="row post-detail animate__animated animate__bounceIn">
       <div class="col-12 d-flex justify-content-between">
         <h2 class="header"> Post Details</h2>
         <button
           type="button"
-            class="btn edit-button animate__animated animate__tada animate__infinite"
+          class="btn edit-button animate__animated animate__tada animate__infinite"
           data-bs-toggle="modal"
           data-bs-target="#exampleModal{{resource.id}}"
         >
@@ -43,9 +43,12 @@
       <div class="col-12 col-sm-12 col-lg-10">
         <div class="post-description">
           <h2 class="one-resource-title"> {{resource.title}}</h2>
-          <p class="text-white timestamp">{{resource.createdAt}}</p>
-          <h2 class="one-resource-title"> Category    </h2>
-          <p id="categoryIdConverter"> {{resource.category_id}} </p>
+          <h3 class="text-white timestamp">{{resource.createdAt}}</h3>
+          <h4 class="one-resource-title">
+            Category
+            <span id="categoryIdConverter"> {{resource.category_id}} </span>
+          </h4>
+
           <p class="text-white"> {{resource.description}}</p>
         </div>
 
@@ -53,14 +56,52 @@
 
     </div>
 
+    <div class="row post-detail-comment mt-5 p-3">
+      <div class="col-12">
+        <h2 class="header"> Comments</h2>
+      </div>
+
+      
+      <div class="col-12 comment-box p-4">
+
+        <div class="row comment-head">
+
+        
+       
+        <div class=" col-12 d-flex align-items-center">
+
+          <i class="bi bi-person-circle" style="vertical-align: middle;"></i>
+          <h5 class="m-2"> username</h5>
+
+        </div>
+        <div class="col-12 comment-body d-flex align-items-center">
+          <p class="m-0"> This is a comment</p>
+
+        </div>
+
+        </div>
+      </div>
+      
 
 
-<div class="modal edit-form-modal" id="exampleModal{{resource.id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-body row g-3 p-3 border-3" id="updateform">
+
+
+
+    </div>
+
+    <div
+      class="modal edit-form-modal"
+      id="exampleModal{{resource.id}}"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="exampleModalLongTitle"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-body row g-3 p-3 border-3" id="updateform">
             <div class="text-white mb-4">
-              <h4 ><i class="bi bi-pencil-square "></i>Edit Post </h4>
+              <h4><i class="bi bi-pencil-square"></i>Edit Post </h4>
             </div>
             <div class="col-12">
               <label
@@ -142,19 +183,14 @@
             </div>
           </div>
         </div>
-      
+
+      </div>
     </div>
-  </div>
-</div>
-
-
 
   </div>
 
 </div>
 
- <script src="/js/updateDelete.js"></script> 
-  <script src="/js/categoryConverter.js"></script> 
-   <script src="/js/timeStamp.js"></script> 
-
-
+<script src="/js/updateDelete.js"></script>
+<script src="/js/categoryConverter.js"></script>
+<script src="/js/timeStamp.js"></script>

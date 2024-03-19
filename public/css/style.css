@@ -4,13 +4,9 @@
 
 body {
     background-color: #0c0f13;
-
-  
     color: #fff;
     font-size: 18px;
   
-   
-
 }
 
 
@@ -38,17 +34,21 @@ header {
 .login-signup {
     background-color: #858181f9;
     border-radius: 20px;
-
     
 }
 
 .login-box{
-    background-color: rgba(178, 99, 218, 0.769);
+    background-color: #964dc3f9;
     border-radius: 20px;
     
 
 }
 
+
+
+.login-div{
+    margin-top: 100px;
+}
 
 .custom-input {
     background-color: #1e2328fd;
@@ -78,11 +78,16 @@ header {
 
 .login-button:hover{
     background-color: #000000;
-    color: rgb(41, 151, 98);
+    color: rgb(184, 77, 152);
 
     transition: .6s;
 }
 
+.header2{
+    font-family: Poppins;
+    font-weight: 300;
+    color: #131113;
+}
 
 .login-form-marker{
     font-weight: 600;
@@ -137,31 +142,35 @@ header {
 }
 
 nav {
-    background-color: rgba(150, 77, 195, 0.976);
+    background-color: #964dc3f9;
 }
 
 #navbrand{
     font-size: 30px;
     font-family: 'Poppins', sans-serif;
     color: #030303;
+    letter-spacing: 1px;
 }
 
 
 #navbrand:hover{
-    color: #e3e3e3;
+    color: #afcaca;
     transition: .6s;
     transform: scale(1.1);
+    
 }
 
+
 .nav-link {
-    margin: auto;
+    
     color: #1c1c1c;
-    font-size: 25px;
+    font-size: 23px;
     font-family: Poppins;
+    letter-spacing: 1px;
 
 }
 .nav-link:hover {
-    color:#efefefda;
+    color:#afcaca;
     transition: .6s;
 }
 
@@ -385,5 +394,15 @@ nav {
     }
     .no-found-text{
         font-size: 120px;
+    }
+
+    #signUp{
+        padding: 70px;
+        padding-left: 10px;
+    }
+
+    #login{
+        padding: 70px;
+        padding-left: 30px;
     }
 }

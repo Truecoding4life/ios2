@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { Resource, User, Project, Category } = require("../models");
+const { Resource, User, Project, Category, Comment } = require("../models");
 
 // home route
 router.get("/", async (req, res) => {
@@ -148,12 +148,21 @@ router.get("/resource/:id", async (req, res) => {
         include: [
           {
             model: User,
-          },
+          }
         ],
       });
+      const commentsData = await Comment.findAll({
+        where: { resource_id: req.params.id },
+      
+      })
+
       if (resourceData) {
         const resource = resourceData.get({ plain: true });
+        const comments = commentsData.map((comment) => comment.get({ plain: true }));
+        console.log("Resource Data:", comments); // Log the resource data
+
         res.status(200).render("one-resource-detail", {
+          comments: comments,
           resource: resource,
           loggedIn: req.session.loggedIn,
         });

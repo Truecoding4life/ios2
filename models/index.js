@@ -2,6 +2,13 @@ const User = require('./User');
 const Resource = require('./Resource');
 const Project = require('./Project');
 const Category = require('./Category');
+const Comment = require('./Comment');
+
+
+// Define relationship between post and comment
+Resource.hasMany(Comment, { foreignKey: 'resource_id' });
+Comment.belongsTo(Resource, { foreignKey: "resource_id" });
+
 
 
 // Relationship between User and Resource
@@ -41,4 +48,4 @@ Project.belongsTo(User, {
   foreignKey: 'user_id',
 });
 
-module.exports = { User, Project, Resource, Category };
+module.exports = { User, Project, Resource, Category , Comment};

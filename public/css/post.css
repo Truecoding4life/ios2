@@ -29,7 +29,7 @@
     color: #ebe6e6;
     border-color: none;
     border-radius: 20px;
-    background-color: rgba(33, 56, 68, 0.825);
+    background-color: rgba(1, 30, 45, 0.825);
     padding: 10px;
     font-family: Poppins, Courier, monospace;
 }
@@ -74,19 +74,55 @@
 }
 
 .comment-head{
-    background-color: #af8cc7;
+    /* background-color: #af8cc7; */
+    margin-left: 10px;    
+}
+
+.comment{
+    background-color: #4e9b70f5;
     border-radius: 20px;
+    margin-top: 30px;
+    box-shadow: 0px 0px 5px 0px #1e1d1d;
+    
+}
+.comment-button{
+    border-radius: 0;
+    color: #a1c3ad;
+    border-color: none;
+    background-color: rgba(76, 102, 85, 0.693);
+    padding: 10px;
+    font-family: Poppins, Courier, monospace;
+    width: 100%;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+
+}
+
+.comment-header{
+    color: #52b77ef5;
+}
+.comment-button:hover{
+    color: #b8c4c0;
+    background-color: #408064;
+    transition: .4s;
+}
+.comment-warning{
+    background-color: #c95959;
+    border-radius: 20px;
+    margin-top: 30px;
 }
 
 .comment-body{
-    background-color: #2c2c3192;
+    background-color: #2c2c31a9;
     padding-block: 20px;
     border-bottom-right-radius: 20px;
     border-bottom-left-radius: 20px;
 
 }
 
-
+.comment-head .timestamp{
+    font-size: small;
+}
 .more-detail-text{
     color: #62647e;
     font-size: 15px;
@@ -102,6 +138,31 @@
 .homepage-post-text{
     max-height: 100px;
     overflow: hidden;
+}
+
+
+.comment-textarea{
+    border-radius: 0;
+    background-color: #333233dc;
+    border: none;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px; 
+    color: white;  
+}
+
+.comment-textarea:focus{
+    border: none;
+    outline: none;
+    background-color: #333233dc;
+    color: rgb(223, 220, 220);
+
+}
+
+
+
+.comment-textarea::placeholder{
+    color: #91b39e;
+
 }
 
 @media screen and (max-width: 600px){
@@ -154,7 +215,9 @@
     
     }
 
-
+    .comment h5{
+        font-size: 15px;
+    }
     .post-description{
         padding-top:30px;
       }
@@ -165,7 +228,7 @@
 
    
     .timestamp{
-        font-size: 13px;
+        font-size: 10px;
     
     }
     .more-detail-text{

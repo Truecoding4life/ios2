@@ -1,5 +1,6 @@
 const router = require("express").Router();
-const { Resource, Category, User, Project } = require("../../models");
+const { log } = require("handlebars");
+const { Resource, Category, User, Project, Comment } = require("../../models");
 
 // Route to create resource, tested and working
 router.post("/", async (req, res) => {
@@ -49,12 +50,29 @@ router.post('/search', async (req, res) => {
 // We might need this route later
 router.post("/:id", async (req, res) => {
   try {
-    const dbResourceData = await resource.findByPk({
-      where: { id: req.params.resource_id },
-    });
 
+    await Comment.create({
+      comment: req.body.text, // The comment text
+      resource_id: req.body.resource_id, // The resource_id parameter from the URL
+    });
+    const dbResourceData = await Resource.findByPk(req.body.resource_id,{
+      include: [
+        {
+          model: User,
+        },
+      ],
+    });
+    const commentsData = await Comment.findAll({
+      where: { resource_id: req.params.id },
+    
+    })
     const resource = dbResourceData.get({ plain: true });
-    res.render("resource", { resource, loggedIn: req.session.loggedIn });
+    const comments = commentsData.map((comment) => comment.get({ plain: true }));
+    res.status(200).render("one-resource-detail", {
+      comments: comments,
+      resource: resource,
+      loggedIn: req.session.loggedIn,
+    });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);

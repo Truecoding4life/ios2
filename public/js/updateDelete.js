@@ -10,7 +10,7 @@ document.querySelector("#update").addEventListener("click", (event) => {
     image_url: document.querySelector('#editedImage').value,
   };
   // console.log(postId);
-  console.log(editResource);
+  console.log("This is the edited resource");
   fetch(`/api/resource/${resourceId}`, {
     method: "PUT",
     body: JSON.stringify(editResource),

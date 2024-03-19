@@ -12,7 +12,7 @@ function fixTimestamp() {
     for (let i = 0; i < timestamps.length; i++) {
         let text = timestamps[i].innerHTML;
         let date = text.slice(0, 16);
-        let time = text.slice(17,25)
+        let time = text.slice(17,22)
         timestamps[i].innerHTML = "Posted on " + date + " at " + time ;
     }
 }

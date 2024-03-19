@@ -43,6 +43,7 @@
       <div class="col-12 col-sm-12 col-lg-10">
         <div class="post-description">
           <h2 class="one-resource-title"> {{resource.title}}</h2>
+           <p id="post-id" > {{resource.id}}</p>
           <h3 class="text-white timestamp">{{resource.createdAt}}</h3>
           <h4 class="one-resource-title">
             Category
@@ -56,38 +57,7 @@
 
     </div>
 
-    <div class="row post-detail-comment mt-5 p-3">
-      <div class="col-12">
-        <h2 class="header"> Comments</h2>
-      </div>
-
-      
-      <div class="col-12 comment-box p-4">
-
-        <div class="row comment-head">
-
-        
-       
-        <div class=" col-12 d-flex align-items-center">
-
-          <i class="bi bi-person-circle" style="vertical-align: middle;"></i>
-          <h5 class="m-2"> username</h5>
-
-        </div>
-        <div class="col-12 comment-body d-flex align-items-center">
-          <p class="m-0"> This is a comment</p>
-
-        </div>
-
-        </div>
-      </div>
-      
-
-
-
-
-
-    </div>
+    {{> post-detail-comment}}
 
     <div
       class="modal edit-form-modal"
@@ -185,12 +155,13 @@
         </div>
 
       </div>
+  
     </div>
 
   </div>
-
 </div>
 
 <script src="/js/updateDelete.js"></script>
 <script src="/js/categoryConverter.js"></script>
 <script src="/js/timeStamp.js"></script>
+<script src="/js/comment.js"></script>

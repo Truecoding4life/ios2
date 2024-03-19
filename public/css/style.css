@@ -1,0 +1,397 @@
+/* a {
+    font-family: 'Rubik', sans-serif;
+} */
+
+body {
+    background-color: #0c0f13;
+
+  
+    color: #fff;
+    font-size: 18px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+   
+
+}
+
+
+.login-alert-success{
+    background-color: #2abc89aa;
+    color: rgb(252, 244, 244);
+    border-radius: 20px;
+    border-color: black;
+    
+
+}
+
+.login-alert-danger{
+    background-color: #c24141c9;
+    color: white;
+    border-radius: 20px;
+    border-color: black;
+
+
+
+}
+
+header {
+    background-color: rgb(61, 140, 96);
+    padding: 50px;
+    margin-top: 50px;
+    border-radius: 20px;
+    margin-bottom: 12px;
+}
+
+#login{
+    padding: 70px;
+
+}
+#signUp {
+    padding: 70px;
+
+    
+}
+
+.login-box{
+    background-color: rgb(178, 117, 209);
+    padding: 30px;
+    border-radius: 20px;
+    color: #000;
+
+}
+
+
+.custom-input {
+    background-color: #1e2328fd;
+    border-color: #161d2a;
+    border-radius: 10px;
+    color: white;
+    font-family: 'Nunito Sans';
+}
+
+.custom-input::placeholder {
+    color: rgba(106, 106, 110, 0.718);
+}
+
+.custom-input:focus {
+    color: rgb(213, 208, 208);
+    background-color: #090d10fa;
+    border-color: rgb(5, 5, 5);
+    
+}
+
+.login-button{
+    background-color: #070d17;
+    color: rgb(211, 208, 208);
+    border-radius: 20px;
+    font-family: Poppins;
+}
+
+.login-button:hover{
+    background-color: #000000;
+    color: white;
+    border-radius: 20px;
+    font-family: Poppins;
+}
+
+
+.login-form-marker{
+    font-weight: 700;
+    font-family: Raleway    ;
+    font-size: 15px;
+    color: #2a292b;
+}
+
+
+.spinner-border{
+    margin-right: 10px;
+}
+
+.alert{
+    color: rgb(15, 14, 14);
+    border-radius: 20px;
+    padding: 10px;
+    font-family: Poppins;
+    border-color: rgb(15, 14, 14);
+}
+
+.alert-secondary{
+    background-color: rgba(49, 200, 122, 0.771);
+}
+
+.alert-danger{
+    background-color: rgba(249, 115, 115, 0.767);
+}
+
+
+.danger-icon{
+    color: #ff0000;
+    font-size: 20px;
+    padding: 10px;
+    margin-top: 300px;
+
+}
+
+.card-body{
+    font-family: "Nunito Sans";
+}
+
+.toggler-icon{
+    color: rgb(76, 101, 137);
+    
+
+
+}
+
+nav {
+    background-color: rgba(150, 77, 195, 0.976);
+}
+
+#navbrand{
+    font-size: 30px;
+    font-family: 'Poppins', sans-serif;
+    color: #030303;
+}
+
+
+#navbrand:hover{
+    color: #e3e3e3;
+    transition: .6s;
+    transform: scale(1.1);
+}
+
+.nav-link {
+    margin: auto;
+    color: #1c1c1c;
+    font-size: 25px;
+    font-family: Poppins;
+
+}
+.nav-link:hover {
+    color:#efefefda;
+    transition: .6s;
+}
+
+.toggler-icon{
+    color: rgb(5, 5, 5);
+
+}
+
+
+
+
+.category-card{
+    background-color: rgba(16, 73, 127, 0.797);
+    padding: 10px;
+}
+.category-card-image, .category-card{
+    border-radius: 20px;
+}
+
+.category-button{
+    text-decoration: none;
+    color: rgb(232, 228, 222);
+    background-color: #000000;
+    font-family: Poppins;
+    padding: 8px;
+    border-radius: 10px;
+    padding: 5px;
+    transition: .3s;
+  
+    
+}
+
+.category-name{
+    background-color: #100d0df1;
+    border-radius: 20px;
+    color: rgb(219, 222, 230);
+    font-family: Poppins;
+    padding: 5px;
+  
+    
+}
+.category-button:hover{
+    text-decoration: none;
+    text-decoration-style: none;
+    transform: scale(1.3);
+    color: rgb(49, 105, 168);
+   
+}
+
+.custom-input-search{
+    background-color: #1e2328fd;
+    border-color: #161d2a;
+    border-radius: 10px;
+    color: rgb(148, 147, 147);
+    font-family: Poppins;
+
+}
+
+
+
+.search-button{
+    background-color: rgba(34, 44, 54, 0.77);
+    border-radius: 10px;
+    color: #bd83d0da;
+    font-family: Syne;
+    font-weight: 300;
+    width: 100%;
+}
+
+.search-button:hover{
+    background-color: rgba(164, 111, 177, 0.942);
+    color: rgb(12, 12, 12);
+    transition: .6s;
+}
+
+.result-card-image{
+    width: 180px;
+    border-radius: 200px;
+    padding: 20px;
+}
+
+.result-card-text{
+    padding: 20px;
+    font-family: Poppins;
+    color: rgb(232, 226, 226);
+
+}
+
+.result-card{
+    background-color: rgba(23, 36, 61, 0.75);
+    border-radius: 30px;
+    padding: 20px;
+    margin: 20px;
+    color: rgb(232, 226, 226);
+    font-family: Poppins;
+}
+
+.create-resource-button{
+    background-color: rgba(29, 36, 45, 0.733);
+    color: rgb(186, 152, 177);
+    border-radius: 20px;
+    padding: 8px;
+    font-weight: 400;
+    font-family: Poppins;
+}
+
+.create-resource-button:hover{
+    background-color: rgba(208, 122, 208, 0.944);
+    color: rgb(22, 22, 22);
+    transition: .4s;
+}
+
+.post-detail{
+    background-color: #1d2129ca;
+    padding: 20px;
+    border-radius: 30px;
+}
+.edit-button{
+    color: rgba(188, 143, 188, 0.904);
+    font-weight: 700;
+
+}
+
+.edit-button:hover{
+    color: #ad99cf;
+    transition: .4s;
+}
+
+
+
+.need-space-icon{
+    margin-right: 10px;
+    
+}
+
+#updateform {
+
+    background-color: rgb(19, 21, 25);
+    border-radius: 15px;
+    box-shadow: 0 0 30px 0 rgba(18, 17, 17, 0.68);
+    
+}
+
+.update-form-button{
+    background-color: rgba(48, 49, 69, 0.924);
+    color: white;
+    border-radius: 20px;
+    padding: 10px;
+    font-family: Poppins;
+
+}
+
+.no-found-text{
+    font-family: Poppins;
+    color: #b44f4fc5;
+    font-size: 50px;
+    padding: 90px;
+    font-weight: 300;
+    border-width: 4px;
+    border-color: #b44f4fc5;
+    border-style: solid;
+    border-radius: 30px;
+
+}
+
+.no-found-text:hover{
+    color: #d3a1ddc5;
+    border-color: #a57ec1;
+    transition: .7s;
+    cursor: pointer;
+
+}
+.update-form-button:hover{
+    background-color: rgba(7, 7, 7, 0.974);
+    color: rgb(213, 210, 210);
+
+}
+
+
+.form-marker{
+    font-weight: 600;
+    font-family: Raleway    ;
+    font-size: 15px;
+    color: #9e8cac;
+}
+
+
+
+
+@media screen and (max-width: 600px) {
+    #signUp {
+        padding-top: 200px;
+    }
+    #loginBox{
+        padding-top: 100px;
+    }
+
+    #navbrand{
+        font-size: 30px;
+
+    }
+
+    .no-found-text{
+        font-size: 20px;
+        padding: 20px;
+        border-width: 2px;
+        border-radius: 10px;
+    }
+
+  
+
+   
+
+    
+}
+
+@media screen and (min-width:1200px) {
+    .post-dashboard:hover{
+        transform: scale(1.03);
+        transition: .4s;
+    }
+    .no-found-text{
+        font-size: 120px;
+    }
+}

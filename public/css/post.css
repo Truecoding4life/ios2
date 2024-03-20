@@ -13,11 +13,14 @@
 }
 
 .post-image{
-    border-radius: 30px;
-    max-width: 80px;
-    max-height: 80px;
+    border-radius: 10px;
+    width: 100%; /* Set the width to 100% of its container */
+    height: 100%; /* Set the height to 100% of its container */
+    object-fit: cover;
     box-shadow: 0px 0px 5px 0px #1e1d1d;
+   
 }
+
 
 .post-image-dashboard{
     border-radius: 10px;
@@ -60,13 +63,13 @@
 .post-detail-image{
     border-radius: 20px;
    
-    height:max-content;
     box-shadow: 0px 0px 5px 0px #1e1d1d;
 }
 
 .post-text-dashboard{
     padding-top: 40px;
     padding: 20px;
+    padding-left: 0;
 
     
 }
@@ -97,6 +100,8 @@
     border-bottom-right-radius: 20px;
 
 }
+
+
 
 .comment-header{
     color: #52b77ef5;
@@ -161,7 +166,7 @@
 
 img {
     max-width: 100%; /* Sets the maximum width of the image to its container's width */
-    height: auto; /* Ensures the aspect ratio is maintained */
+    max-height: 100%; /* Ensures the aspect ratio is maintained */
   }
 
 .comment-textarea::placeholder{
@@ -174,10 +179,7 @@ img {
         max-width: 60px;
         max-height: 60%;;
     }
-    .post-image{
-        max-width: 100px;
-        max-height: 100px;
-    }
+    
     .post-button{
         padding: 5px;
     }
@@ -210,14 +212,7 @@ img {
 
 
 @media screen and (max-width: 800px){
-    .post-image{
-        width: 30px;
-        height: 30px;
-  
-     
-    
-    
-    }
+   
 
     .comment h5{
         font-size: 15px;

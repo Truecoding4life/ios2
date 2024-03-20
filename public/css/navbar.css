@@ -1,5 +1,5 @@
 nav {
-    background-color: #995fc500;
+    background-color: rgba(0, 0, 0, 0)
 }
 
 #navbrand{
@@ -16,9 +16,7 @@ nav {
     transform: scale(1.1);
     
 }
-.navbar-collapse{
-    background-color: rgba(13, 13, 14, 0.477);
-}
+
 
 .toggler-icon{
     color: #a7a2a7;
@@ -38,4 +36,10 @@ nav {
 .nav-link:hover {
     color:#b657db;
     transition: .6s;
+}
+
+@media screen and ( max-width: 980px){
+    .navbar-collapse{
+        background-color: rgba(13, 13, 14, 0.477);
+    }
 }

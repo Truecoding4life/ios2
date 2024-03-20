@@ -1,6 +1,3 @@
-/* a {
-    font-family: 'Rubik', sans-serif;
-} */
 
 body {
     background-color: #0c0f13;
@@ -8,9 +5,6 @@ body {
     font-size: 18px;
   
 }
-
-
-
 
 
 
@@ -134,50 +128,6 @@ header {
     font-family: "Nunito Sans";
 }
 
-.toggler-icon{
-    color: rgb(76, 101, 137);
-    
-
-
-}
-
-nav {
-    background-color: #974dc5;
-}
-
-#navbrand{
-    font-size: 30px;
-    font-family: 'Poppins', sans-serif;
-    color: #030303;
-    letter-spacing: 1px;
-}
-
-
-#navbrand:hover{
-    color: #afcaca;
-    transition: .6s;
-    transform: scale(1.1);
-    
-}
-
-
-.nav-link {
-    
-    color: #1c1c1c;
-    font-size: 23px;
-    font-family: Poppins;
-    letter-spacing: 1px;
-
-}
-.nav-link:hover {
-    color:#afcaca;
-    transition: .6s;
-}
-
-.toggler-icon{
-    color: rgb(5, 5, 5);
-
-}
 
 
 
@@ -186,6 +136,8 @@ nav {
     background-color: rgba(16, 73, 127, 0.797);
     padding: 10px;
 }
+
+
 .category-card-image, .category-card{
     border-radius: 20px;
 }
@@ -393,7 +345,7 @@ nav {
         transition: .4s;
     }
     .no-found-text{
-        font-size: 120px;
+        font-size: 100px;
     }
 
     #signUp{

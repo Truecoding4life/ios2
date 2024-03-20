@@ -1,0 +1,32 @@
+nav {
+    background-color: #974dc5;
+}
+
+#navbrand{
+    font-size: 30px;
+    font-family: 'Poppins', sans-serif;
+    color: #030303;
+    letter-spacing: 1px;
+}
+
+
+#navbrand:hover{
+    color: #afcaca;
+    transition: .6s;
+    transform: scale(1.1);
+    
+}
+
+
+.nav-link {
+    
+    color: #1c1c1c;
+    font-size: 23px;
+    font-family: Poppins;
+    letter-spacing: 1px;
+
+}
+.nav-link:hover {
+    color:#afcaca;
+    transition: .6s;
+}

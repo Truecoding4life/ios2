@@ -4,7 +4,7 @@
 
     <div class="col-12">
 
-      <div class="row p-4">
+      <div class="row p-4 align-items-center">
         <div class="col-2 col-sm-2 col-lg-2 col-xl-1">
           <div class="post-image-div ">
             <img src="{{image_url}}" class="post-image" alt="resource image" />
@@ -15,21 +15,23 @@
             <h4 class="card-title home-resource-title text-white ">{{title}}
 
             </h4>
-            <p class="timestamp"> {{createdAt}}</p>
 
           </div>
-          <p class="more-detail-text animate__animated animate__flash animate__delay-2s animate__repeat-2">
-            click to view detail
 
+        </div>
+        <div class="col-12 homepage-post-text pt-3">
+          <p class="more-detail-text">
+            
+            <i class=" animate__animated animate__flash animate__delay-2s animate__repeat-2">  
             <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" fill="currentColor"
               class="bi bi-arrow-up-circle-fill" viewBox="0 0 16 16">
               <path
                 d="M16 8A8 8 0 1 0 0 8a8 8 0 0 0 16 0m-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707z" />
-            </svg>
+            </svg> </i> click to view detail
           </p>
+            <p class="timestamp"> {{createdAt}}</p>
 
-        </div>
-        <div class="col-12 homepage-post-text pt-3">
+
           <p class="card-text text-white home-resource-description">{{description}}.</p>
 
         </div>

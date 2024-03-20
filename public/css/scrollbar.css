@@ -1,12 +1,13 @@
 /* Track */
 ::-webkit-scrollbar {
     width: 8px; /* width of the scrollbar */
+    scroll-behavior: smooth;
   }
   
   /* Handle */
   ::-webkit-scrollbar-thumb {
-    background: #b386c0e9; /* color of the scrollbar handle */
-    border-radius: 5px; /* roundness of the scrollbar handle */
+    background: #93879983; /* color of the scrollbar handle */
+    border-radius: 25px; /* roundness of the scrollbar handle */
   }
   
   /* Handle on hover */

@@ -127,6 +127,33 @@
 .comment-head .timestamp{
     font-size: small;
 }
+
+
+.post-sub{
+    color: #7e819d;
+    font-size: 15px;
+    font-family: Poppins, Courier, monospace;
+    background-color: #2e3137b9;
+    padding: 8px;
+    border-radius: 10px;
+
+}
+.like-button:hover{
+    color: #a688bbf7;
+    transition: .4s;
+}
+
+.save-button:hover{
+    color: #a688bbf7;
+    transition: .4s;
+}
+
+.like-display{
+    color: #a84b5b;
+    font-size: 15px;
+    font-family: Poppins, Courier, monospace;
+
+}
 .more-detail-text{
     color: #7e819d;
     font-size: 15px;
@@ -138,14 +165,6 @@
     color: #a688bbf7;
     transition: .4s;
 }
-
-.like-display{
-    color: #a84b5b;
-    font-size: 15px;
-    font-family: Poppins, Courier, monospace;
-
-}
-
 .purple-timestamp{
     font-size: 15px;
     color: #7e819d;
@@ -153,24 +172,17 @@
 
 }
 
-.like-button{
-    color: #756f7f;
-    border-color: none;
-    font-size: 15px;
-    font-family: Poppins, Courier, monospace;
 
-}
 
-.save-button{
-    color: #d6d460ab;
-    border-color: none;
-    font-size: 15px;
-    font-family: Poppins, Courier, monospace;
-}
+
 
 .homepage-post-text{
     max-height: 200px;
     overflow: hidden;
+}
+
+.homepage-resource-title{
+    width: 100%;
 }
 
 
@@ -206,6 +218,10 @@ img {
     .post-detail-image{
         max-width: 60px;
         max-height: 60%;;
+    }
+
+    .more-detail-text{
+        display: none;
     }
     
     .post-button{

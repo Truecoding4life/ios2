@@ -355,3 +355,9 @@ header {
         padding-left: 30px;
     }
 }
+
+@media screen and (min-width: 1200px) and (max-width: 1400px) {
+    .post-text-dashboard {
+        font-size: 1px;
+    }
+}

@@ -40,7 +40,7 @@
 
   </head>
 
-  <body>
+  <body id="main-content" style="display:none;">
     <div class="section">
       <nav class="navbar fixed-top navbar-expand-lg">
         <div class="container-fluid d-flex justify-content-between">
@@ -139,5 +139,12 @@
   <footer>
 
   </footer>
+
+  <script>
+    window.addEventListener('load', function() {
+      // Code to execute after everything, including images, has loaded
+      document.getElementById('main-content').style.display = 'block';
+    });
+  </script>
 
 </html>

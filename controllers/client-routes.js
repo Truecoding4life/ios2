@@ -156,13 +156,17 @@ router.get("/resource/:id", async (req, res) => {
       
       })
 
+      let sendBackData = [];
       if (resourceData) {
         const resource = resourceData.get({ plain: true });
-        const comments = commentsData.map((comment) => comment.get({ plain: true }));
-        console.log("Resource Data:", comments); // Log the resource data
+      
+        for( let i = commentsData.length -1; i >= 0; i--){
+          sendBackData.push(commentsData[i].get({ plain: true }));
+        };
+        console.log("Resource Data:", sendBackData); // Log the resource data
 
         res.status(200).render("one-resource-detail", {
-          comments: comments,
+          comments: sendBackData,
           resource: resource,
           loggedIn: req.session.loggedIn,
         });

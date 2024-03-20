@@ -1,8 +1,12 @@
 
 body {
-    background-color: #0c0f13;
+    
+
+    background-image: url('../image/background-grid.jpeg');
     color: #fff;
     font-size: 18px;
+    background-repeat: no-repeat;
+    background-size: cover;
   
 }
 

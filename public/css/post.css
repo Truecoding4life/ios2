@@ -1,5 +1,5 @@
 .post-dashboard{
-    background-color: #1d2129ca;
+    background-color: #1d2129e2;
     border-radius: 20px;
     font-family: Nunito Sans, sans-serif;
    
@@ -144,6 +144,7 @@
 
 
 .comment-textarea{
+    padding: 10px;
     border-radius: 0;
     background-color: #333233dc;
     border: none;
@@ -156,7 +157,7 @@
     border: none;
     outline: none;
     background-color: #333233dc;
-    color: rgb(223, 220, 220);
+    color: rgb(136, 160, 130);
 
 }
 
@@ -255,12 +256,9 @@
     }
 
     .post-dashboard:hover{
-        border-color: rgba(140, 95, 196, 0.675);
-        border-width: 4px;
-        border-style: solid;
-        transition: .6s;
+      
         cursor:pointer;
-        box-shadow: 0px 0px 10px 3px rgba(119, 68, 190, 0.2);
+        box-shadow: 0px 0px 10px 3px rgba(33, 30, 37, 0.689);
      
     }
     

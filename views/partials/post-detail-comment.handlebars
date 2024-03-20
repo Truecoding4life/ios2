@@ -16,8 +16,8 @@
   <div class="col-12 comment-box">
     <div class="row p-2">
       {{#each comments as |this|}}
-        <div class="comment p-0">
-          <div class="col-12 comment-head d-flex justify-content-between align-items-center m-2">
+        <div  class="comment p-0">
+          <div class="col-12 comment-head align-items-center m-2">
             <div class="d-flex align-items-center ">
               <i class="bi bi-person-circle" ></i>
 
@@ -28,11 +28,15 @@
             
           </div>
           <div class="col-12 comment-body p-3">
-            <p class="m-0"> {{this.comment}}</p>
+            <p > {{this.comment}}</p>
           </div>
         </div>
        
       {{/each}}
+
+      {{#unless comments}}
+      <h3 class="no-comment-text"> No comments yet</h3>
+      {{/unless}}
     </div>
   </div>
 </div>

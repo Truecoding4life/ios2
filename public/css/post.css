@@ -139,6 +139,35 @@
     transition: .4s;
 }
 
+.like-display{
+    color: #a84b5b;
+    font-size: 15px;
+    font-family: Poppins, Courier, monospace;
+
+}
+
+.purple-timestamp{
+    font-size: 15px;
+    color: #7e819d;
+    font-family: Poppins, Courier, monospace;
+
+}
+
+.like-button{
+    color: #756f7f;
+    border-color: none;
+    font-size: 15px;
+    font-family: Poppins, Courier, monospace;
+
+}
+
+.save-button{
+    color: #d6d460ab;
+    border-color: none;
+    font-size: 15px;
+    font-family: Poppins, Courier, monospace;
+}
+
 .homepage-post-text{
     max-height: 200px;
     overflow: hidden;

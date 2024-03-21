@@ -97,8 +97,22 @@ header {
     font-family: Poppins;
 }
 
+.search-button{
+    width: 100%;
+    background-color: #40404ccd;
+    color: rgb(198, 188, 198);
+    border-radius: 10px;
+    font-family: Poppins;
+}
+
+.search-button:hover{
+    background-color: #20171fe2;
+    color: rgb(184, 77, 152);
+    transition: .6s;
+
+}
 .login-button:hover,
-.search-button:hover,
+
 .create-resource-button:hover,
 .update-form-button:hover {
     background-color: #000000;

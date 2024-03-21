@@ -1,8 +1,8 @@
-<div class="row post-detail-comment mt-5 p-3 mb-5 animate__animated animate__fadeInUp">
+<div class="row post-detail-comment mt-3 mb-5 animate__animated animate__fadeInUp ">
   <div class="col-12 ">
     <h2 class="header comment-header"> Comments</h2>
   </div>
-  <div class="col-12">
+  <div class="col-12 p-0">
     <div class="form-group">
       <textarea
         id="comment-textarea"
@@ -14,10 +14,10 @@
     <button id="test" type="button" class="btn comment-button"> Send </button>
   </div>
   <div class="col-12 comment-box">
-    <div class="row p-2">
+    <div class="row">
       {{#each comments as |this|}}
         <div  class="comment p-0">
-          <div class="col-12 comment-head align-items-center m-2">
+          <div class="col-12 comment-head align-items-center m-2 p-2">
             <div class="d-flex align-items-center ">
               <i class="bi bi-person-circle" ></i>
 

@@ -14,7 +14,7 @@ $(document).ready(function () {
             // handleAddLike(event, id); // Pass event object and resource ID
             handleAddLike(id);
             break;
-          case "comment-button":
+          case "comment-text-button":
             console.log("/resource/" + id)
             location.href = "/resource/" + id;
             break;

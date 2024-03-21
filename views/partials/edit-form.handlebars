@@ -1,0 +1,97 @@
+<div
+      class="modal edit-form-modal"
+      id="exampleModal{{resource.id}}"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="exampleModalLongTitle"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog animate__animated animate__bounceIn" role="document">
+        <div class="modal-content">
+          <div class="modal-body row g-3 p-3 border-3 " id="updateform">
+            <div class="form-marker mb-4 d-flex align-items-center">
+             <h4>Edit Post </h4>
+            </div>
+            <div class="col-12">
+              <label
+                for="inputTitle"
+                class="form-label form-marker"
+              >Title</label>
+              <input
+                type="text"
+                class="form-control custom-input"
+                placeholder="{{resource.title}}"
+                value="{{resource.title}}"
+              />
+            </div>
+            <div class="col-12">
+              <label
+                for="inputDescription"
+                class="form-label form-marker"
+              >Description</label>
+              <textarea
+                class="form-control custom-input"
+                id="editedDescription"
+                style="overflow: hidden;"
+                rows="3"
+                placeholder="{{resource.description}}"
+                value="{{resource.description}}"
+              ></textarea>
+            </div>
+            <div class="col-md-6">
+              <label for="inputTags" class="form-label form-marker">Tags</label>
+              <input
+                type="text"
+                class="form-control custom-input"
+                id="inputTags"
+                placeholder="Enter resource tag(s)"
+              />
+            </div>
+            <div class="col-md-4">
+              <label
+                for="inputCategory"
+                class="form-label form-marker"
+              >Category</label>
+              <select id="editedCategory" class="form-select custom-input">
+                <option selected>Select </option>
+                <option value="1" id="sports">sports</option>
+                <option value="2" id="food">food</option>
+                <option value="3" id="music">music</option>
+                <option value="4" id="weather">weather</option>
+                <option value="5" id="events">events</option>
+                <option value="6" id="gaming">gaming</option>
+                <option value="7" id="technologies">technologies</option>
+                <option value="8" id="shopping">shopping</option>
+              </select>
+            </div>
+            <div class="col-md-12">
+              <label
+                for="inputImage"
+                class="form-label form-marker"
+              >Image</label>
+              <input
+                type="text"
+                class="form-control custom-input"
+                id="editedImage"
+                value="{{resource.image_url}}"
+              />
+            </div>
+
+            <div class="col-12 d-flex mt-4">
+              <button
+                type="submit"
+                class="btn update-form-button me-2 col-sm-6"
+                id="update"
+              >Update Resource</button>
+              <button
+                type="submit"
+                class="btn update-form-button col-sm-6"
+                id="delete"
+              >Delete Resource</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+  
+    </div>

@@ -17,6 +17,40 @@ header {
     margin-bottom: 12px;
 }
 
+
+#updateform {
+    background-color: rgb(19, 21, 25);
+    border-radius: 15px;
+    box-shadow: 0 0 30px 0 rgba(18, 17, 17, 0.68);
+    
+    overflow-y: auto;
+}
+.edit-form-modal{
+    height: 100%;
+    padding: 20px;
+}
+
+
+.form-marker{
+    font-weight: 300;
+    font-family: Poppins   ;
+    font-size: 15px;
+    color: #9e8cac;
+
+}
+
+
+.edit-button{
+    color: rgba(188, 143, 188, 0.904);
+    font-weight: 700;
+
+}
+
+.edit-button:hover{
+    color: #9c89bf;
+    transition: .4s;
+}
+
 /* Form Styles */
 
 .custom-input,
@@ -107,6 +141,13 @@ header {
         padding: 20px;
         border-width: 2px;
         border-radius: 10px;
+    }
+    .edit-form-modal{
+        margin: 0;
+    }
+
+    .homepage-post-text{
+        padding: 5px;
     }
 }
 

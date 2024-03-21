@@ -13,12 +13,13 @@
 }
 
 .post {
-    background-color: rgba(23, 36, 61, 0.75);
+    background-color:#20242def;
     border-radius: 30px;
     padding: 20px;
     margin: 20px;
     color: rgb(232, 226, 226);
     font-family: Poppins;
+    flex-shrink: 1;
 }
 
 
@@ -157,13 +158,21 @@
     border-radius: 10px;
 
 }
+
 #like-button:hover{
     color: #a688bbf7;
     transition: .4s;
+    cursor: pointer;
 }
 
 #bookmark-button:hover{
     color: #a688bbf7;
+    transition: .4s;
+}
+
+#comment-button:hover{
+    color: #a688bbf7;
+    cursor: pointer;
     transition: .4s;
 }
 
@@ -239,8 +248,16 @@ img {
         max-height: 60%;;
     }
 
+    .more-detail-text{
+       font-size: 3px;
+    }
     
     
+    .comment-text-button{
+        font-size: 10px;
+    }
+    
+
     .post-button{
         padding: 5px;
     }
@@ -321,9 +338,7 @@ img {
 }
 
 @media screen and (min-width: 990px) and (max-width: 1400px) {
-    .home-resource-title {
-        font-size: 16px;
-    }
+   
 }
 
 @media screen and ( max-width: 990px){

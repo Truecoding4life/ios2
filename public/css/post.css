@@ -138,12 +138,12 @@
     border-radius: 10px;
 
 }
-.like-button:hover{
+#like-button:hover{
     color: #a688bbf7;
     transition: .4s;
 }
 
-.save-button:hover{
+#bookmark-button:hover{
     color: #a688bbf7;
     transition: .4s;
 }
@@ -220,9 +220,7 @@ img {
         max-height: 60%;;
     }
 
-    .more-detail-text{
-        display: none;
-    }
+    
     
     .post-button{
         padding: 5px;

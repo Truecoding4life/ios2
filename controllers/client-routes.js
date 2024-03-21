@@ -48,16 +48,21 @@ router.get("/dashboard", async (req, res) => {
         where: {
           user_id: req.session.user_id,
         },
-        include: { model: Category, attributes: ["category_name"] },
+        include: [ { model: Category, attributes: ["category_name"] },
+                  { model: Like, attributes: ["user_id"]}]
+                 
       });
       const resources = dbCategoryData.map((category) =>
         category.get({ plain: true })
       );
       let data =[];
+      let Likes =[]
       for ( let i = resources.length -1; i >= 0; i--){
         data.push(resources[i])
+        Likes.push(resources[i].likes)
       }
       res.render("dashboard", {
+        Likes,
         resources: data,
         loggedIn: req.session.loggedIn,
         user_id: req.session.user_id,

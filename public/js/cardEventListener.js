@@ -15,6 +15,7 @@ $(document).ready(function () {
             handleAddLike(id);
             break;
           case "comment-button":
+            console.log("/resource/" + id)
             location.href = "/resource/" + id;
             break;
           default:

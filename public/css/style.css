@@ -106,8 +106,8 @@ header {
 }
 
 .search-button:hover{
-    background-color: #20171fe2;
-    color: rgb(184, 77, 152);
+    background-color: #969396e2;
+    color: rgb(41, 38, 40);
     transition: .6s;
 
 }

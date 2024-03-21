@@ -3,13 +3,17 @@ const Resource = require('./Resource');
 const Project = require('./Project');
 const Category = require('./Category');
 const Comment = require('./Comment');
-
+const Like = require('./Like');
 
 // Define relationship between post and comment
 Resource.hasMany(Comment, { foreignKey: 'resource_id' });
 Comment.belongsTo(Resource, { foreignKey: "resource_id" });
 
 
+
+// Define relationship between post and like
+Resource.hasMany(Like, { foreignKey: 'resource_id' });
+Like.belongsTo(Resource, { foreignKey: "resource_id" });
 
 // Relationship between User and Resource
 User.hasMany(Resource, {

@@ -25,6 +25,12 @@ nav {
     letter-spacing: 1px;
 
 }
+
+.toggler-icon{
+    color: #a7a2a7;
+
+
+}
 .nav-link {
     
     color: #d4d0d0;
@@ -38,8 +44,24 @@ nav {
     transition: .6s;
 }
 
-@media screen and ( max-width: 980px){
-    .navbar-collapse{
-        background-color: rgba(13, 13, 14, 0.477);
+@media screen and ( max-width: 770px){
+    #navbrand{
+        color: #000;
+    }
+    .nav-link{
+        color: #000;
+    }
+    nav{
+        background-color: rgb(124, 81, 174);
+    }
+    .toggler-icon{
+        color: #211f1f;
+    }
+    #navbrand:hover{
+        color: #000;
+        transform: scale(1.1);
+    }
+    .nav-link:hover{
+        color: #000;
     }
 }

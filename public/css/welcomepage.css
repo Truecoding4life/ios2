@@ -1,8 +1,11 @@
-body {
-
-    background-position: center;
-    height: 100vh;
-
+#main-content {
+    background-image: url('../image/background-grid.jpeg');
+    color: #fff;
+    font-size: 18px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
 }
 
 #main {
@@ -10,7 +13,7 @@ body {
 }
 
 #logo {
-    font-size: 100px;
+    font-size: 200px;
     font-family: "Poppins", sans-serif;
     font-weight: 300;
     color: rgba(213, 213, 217, 0.632);
@@ -34,6 +37,51 @@ body {
 
 
 
+nav {
+    background-color: rgba(0, 0, 0, 0)
+}
+
+#navbrand{
+    font-size: 30px;
+    font-family: 'Poppins', sans-serif;
+    color: #bfb9b9c7;
+    letter-spacing: 1px;
+}
+
+
+#navbrand:hover{
+    color: #b657db;
+    transition: .6s;
+    transform: scale(1.1);
+    
+}
+
+
+.toggler-icon{
+    color: #a7a2a7;
+    font-size: 30px;
+    font-family: Poppins;
+    letter-spacing: 1px;
+
+}
+
+.toggler-icon{
+    color: #a7a2a7;
+
+
+}
+.nav-link {
+    
+    color: #d4d0d0;
+    font-size: 23px;
+    font-family: Poppins;
+    letter-spacing: 1.5px;
+
+}
+.nav-link:hover {
+    color:#b657db;
+    transition: .6s;
+}
 
 
 
@@ -43,7 +91,7 @@ body {
         margin-top: 140px;
     }
     #logo {
-        font-size: 50px;
+        font-size: 100px;
     }
     #getStart {
         padding: 10px;
@@ -55,7 +103,7 @@ body {
 
 @media screen and ( min-width:1200px) {
     #logo{
-        font-size: 180px
+        font-size: 230px
     }
 }
 
@@ -63,4 +111,12 @@ body {
     #logo{
         font-size: 500px
     }
+}
+
+
+@media screen and (max-width: 300px){
+    #logo{
+        font-size: 60px;
+    }
+    
 }

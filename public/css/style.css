@@ -88,18 +88,30 @@ header {
     margin-right: 10px;
 }
 /* Button Styles */
-.login-button,
-.search-button,
-.create-resource-button,
-.update-form-button {
+.login-button{
     background-color: #070d17;
     color: rgb(199, 115, 187);
     border-radius: 10px;
     font-family: Poppins;
 }
 
+
+
+.create-resource-button,
+.update-form-button{
+    background-color: #0a0b0d;
+    color: rgb(199, 115, 187);
+}
+.create-resource-button{
+    padding: 14px;
+}
+
+.update-form-button{
+    padding: 20px;
+}
 .search-button{
     width: 100%;
+    padding: 7px;
     background-color: #40404ccd;
     color: rgb(198, 188, 198);
     border-radius: 10px;
@@ -175,6 +187,30 @@ header {
         font-size: 100px;
     }
 
+}
+
+
+@media screen and (max-width: 770px) {
+    #main-content {
+        background-color: #151618;
+        font-size: 18px;
+        background-image: none; /* Hide background image */
+
+        width: 100%;
+        height: 100%;
+    }
+
+    .need-padding{
+        padding-top: 70px;
+    }
+.create-resource-button{
+    background-color: #0a0a0ae9;
+
+}
+
+   
+    
+    
 }
 
 @media screen and (min-width: 1200px) and (max-width: 1400px) {

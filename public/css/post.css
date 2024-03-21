@@ -193,6 +193,24 @@
     font-weight: 200;
 }
 
+
+
+
+.no-found-text{
+    font-family: Poppins;
+    color: #b44f4fc5;
+    font-size: 40px;
+    padding: 40px;
+    font-weight: 200;
+    border-width: 4px;
+    border-color: #b44f4fc5;
+    border-style: solid;
+    border-radius: 30px;
+    
+
+}
+
+
 /* Media Queries */
 @media screen and (max-width: 600px) {
     .post-detail-image {
@@ -219,12 +237,12 @@
     }
 
     .custom-input-search {
-        font-size: 10px;
+        font-size: 13px;
     }
-
-    .search-button {
-        padding: 0px;
+    #comment-text-button{
+        display: none;
     }
+    
 }
 
 @media screen and (max-width: 1200px) {

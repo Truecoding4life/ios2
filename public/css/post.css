@@ -12,6 +12,19 @@
     font-family: Nunito Sans, sans-serif;
 }
 
+.post {
+    background-color: rgba(23, 36, 61, 0.75);
+    border-radius: 30px;
+    padding: 20px;
+    margin: 20px;
+    color: rgb(232, 226, 226);
+    font-family: Poppins;
+}
+
+
+
+
+
 .post-image{
     border-radius: 10px;
     max-width: 100%; /* Set the width to 100% of its container */
@@ -20,6 +33,12 @@
    
 }
 
+.post-detail{
+    background-color: #1d2129ca;
+    padding: 0px;
+    border-radius: 30px;
+    padding: 40px
+}
 
 .post-image-dashboard{
     border-radius: 10px;

@@ -1,0 +1,65 @@
+#login,
+#signUp {
+    padding: 40px;
+}
+
+.login-signup,
+.login-box {
+    background-color: #989494f9;
+    border-radius: 20px;
+    color: #08050a;
+}
+
+.login-signUp{
+   box-shadow: 0px 2px 100px 10px #343439fb;
+}
+
+.login-div {
+    margin-top: 100px;
+}
+
+
+.login-box{
+    background-color: #9d69bdf9;
+    border-radius: 20px;
+    
+
+}
+
+.login-form-marker{
+    font-weight: 600;
+    font-family: Raleway    ;
+    font-size: 15px;
+    color: #08050a;
+}
+
+.login-form-marker-signUp{
+    font-weight: 600;
+    font-family: Raleway    ;
+    font-size: 15px;
+    color: #08050a;
+}
+
+
+@media screen and (max-width: 600px) {
+    #signUp {
+        padding-top: 30px;
+    }
+    #loginBox {
+        padding-top: 100px;
+    }
+
+}
+
+@media screen and (min-width: 1200px) {
+
+    #signUp {
+        padding: 70px;
+        padding-left: 10px;
+    }
+
+    #login {
+        padding: 70px;
+        padding-left: 30px;
+    }
+}

@@ -1,6 +1,7 @@
-DROP DATABASE IF EXISTS adventures_db;
 
-CREATE DATABASE adventures_db;
+DROP DATABASE IF EXISTS ios2;
 
-USE adventures_db;
+CREATE DATABASE ios2;
+
+USE ios2;
 

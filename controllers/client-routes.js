@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { Resource, User, Project, Category, Comment } = require("../models");
+const { Resource, User, Project, Category, Comment, Like } = require("../models");
 
 // home route
 router.get("/", async (req, res) => {
@@ -9,13 +9,23 @@ router.get("/", async (req, res) => {
       const categories = dbCategoryData.map((category) =>
         category.get({ plain: true })
       );
-      const dbResourceData = await Resource.findAll({});
+      const dbResourceData = await Resource.findAll({
+        include: [
+          { model: User, attributes: ["username"] },
+          { model: Category, attributes: ["category_name"] },
+          { model: Like, attributes: ["id"] }
+        ],
+        order: [["createdAt", "DESC"]] // Order resources by creation date
+
+      });
       const resources = dbResourceData.map((resource)=>
       resource.get({plain:true}));
       let data =[];
       for ( let i = resources.length -1; i >= 0; i--){
         data.push(resources[i])
       }
+      console.log("THIS IS DATA SEND FROM HOME ROUTE <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<")
+      console.log(data);
       res.render("homepage", {
         categories,
         loggedIn: req.session.loggedIn,

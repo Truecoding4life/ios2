@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { User } = require("../../models");
+const { User, Like } = require("../../models");
 
 // sign up route working, TESTED
 router.post("/signup", async (req, res) => {
@@ -77,20 +77,21 @@ router.post("/logout", (req, res) => {
 
 // This is route that will be use to add like to post from homepage
 
-router.post('/', (res, req) => { 
-  if(req.session.loggedIn){
-    Like.create({
-      user_id: req.session.user_id,
-      resource_id: req.body.resource_id
-    })
-    .then(dbLikeData => res.json(dbLikeData))
-    .catch(err => {
-      console.log(err);
-      res.status(500).json(err);
-    });
+router.post('/', async (req, res) => { 
+  try {
+    if(req.session.loggedIn){
+      const newLike = await Like.create({
+        user_id: req.session.user_id,
+        resource_id: req.body.id
+      });
+      const likeRawData = newLike.get({plain: true});
+      res.status(200).json(likeRawData);
+    }
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
   }
-
-})
+});
 
 
 

@@ -46,6 +46,8 @@ async function newResourceHandler(event) {
   }
 }
 
+
+
 document
   .querySelector(".createform")
   .addEventListener("submit", newResourceHandler);

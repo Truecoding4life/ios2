@@ -1,7 +1,6 @@
 <div
   class="mb-4 post-dashboard animate__animated animate__fadeInUp card-to-listen"
 >
-  <span class="post-id" hidden> {{id}} </span>
   <div class="row align-items-center">
 
     <div class="col-12">
@@ -37,11 +36,12 @@
                   />
                 </svg>
 
-                30
+                {{likes.length}}
               </p>
 
-              <p class="m-0 like-button">
+              <p class="m-0">
                 <svg
+                id="like-button"
                   xmlns="http://www.w3.org/2000/svg"
                   width="20"
                   height="20"
@@ -55,8 +55,9 @@
                 </svg>
 
               </p>
-              <p class="m-0 save-button">
+              <p class="m-0">
                 <svg
+                id="bookmark-button"
                   xmlns="http://www.w3.org/2000/svg"
                   width="20"
                   height="20"
@@ -73,12 +74,13 @@
                 </svg>
 
               </p>
-              <p class="more-detail-text m-0">
+              <p  id="comment-button" class="more-detail-text m-0">
 
                 <i
                   class="animate__animated animate__flash animate__delay-2s animate__repeat-2"
                 >
                   <svg
+                 
                     xmlns="http://www.w3.org/2000/svg"
                     width="19"
                     height="19"
@@ -91,9 +93,10 @@
                     />
                   </svg>
                 </i>
-                click to view detail
-              </p>
+                Comment  
 
+              </p>
+<span class="post-id" hidden> {{id}} </span>
             </div>
           </div>
 

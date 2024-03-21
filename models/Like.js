@@ -1,7 +1,6 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-const Resource = require('./Resource');
 
 class Like extends Model {}
 
@@ -30,9 +29,9 @@ Like.init(
     },
     {
         sequelize,
-        freezeTableName: false,
-        underscored: false,
-        modelName: "comment",
+        freezeTableName: true, 
+        underscored: true,
+        modelName: "like", 
       }
 );
 

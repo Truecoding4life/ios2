@@ -1,5 +1,5 @@
 
-body {
+#main-content {
     
 
     background-image: url('../image/background-grid.jpeg');
@@ -7,6 +7,7 @@ body {
     font-size: 18px;
     background-repeat: no-repeat;
     background-size: cover;
+    width: 100%;
   
 }
 

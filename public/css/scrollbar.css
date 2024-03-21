@@ -1,0 +1,26 @@
+/* Track */
+::-webkit-scrollbar {
+    width: 8px; /* width of the scrollbar */
+    scroll-behavior: smooth;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #93879983; /* color of the scrollbar handle */
+    border-radius: 25px; /* roundness of the scrollbar handle */
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #c5c1c1; /* color of the scrollbar handle on hover */
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #1b1d25; /* color of the scrollbar track */
+  }
+  
+  /* Corner */
+  ::-webkit-scrollbar-corner {
+    background: transparent; /* color of the scrollbar corner (between vertical and horizontal scrollbar) */
+  }

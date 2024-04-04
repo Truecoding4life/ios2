@@ -11,51 +11,53 @@
 - [Tests](#tests)
 - [Badges](#badges)
 - [Contributors](#contributors)
-- [Authors](#authors)
+- [Author](#author)
 
-<hr>
+<br>
 
 #### Web Application
 
 [iOS2.com](https://ios-2-079bbe29e9fe.herokuapp.com/)
 
-<hr>
+<br>
 
 ## Description
 
 iOS2 is an Blog post built to connect the world together over the net. It is a full-stack web application built using Node.js, Express.js, and MySQL, following the MVC paradigm to ensure a structured and maintainable codebase. It offers a secure and interactive platform with RESTful API endpoints for data retrieval and addition. The application employs Handlebars.js as the templating engine for dynamic content rendering.
 
-<hr>
+<br>
 
 ### How to use it
 
 Please read below to see how the application work and it functionalities.
 
-<hr>
+<br>
 
-**Website Landing Page:** Jstudio wants to provides users with a streamlined experience to enter the iOS2 content within the site. To access content the user just click get started
+**Website Landing Page:** 
+
+Jstudio wants to provides users with a streamlined experience to enter the iOS2 content within the site. To access content the user just click get started
 
 ![Screenshot of home page](./public/image/home.png)
 
-<hr>
+<br>
 
 **New Feed:** At a glance the new feed will display all post within the database from the most relevant to the least by using some algorithm technique.
 
 ![Screenshot of resource index](./public/image/feed.png)
 
-<hr>
+<br>
 
 **Post Detail:** In post detail user will see full post description and to the top right is the edit button, as it now we want the data to be able to editable by everyone so user has the freedom to free with the flow
 
 ![Screenshot of My Dashboard](./public/image/post.png)
 
-<hr>
+<br>
 
 **My Dashboard:** Each user has a dashboard, which can be accessed after logging in. Here user will be able to edit views their posts, make a new post or edit your post.
 
 ![Screenshot of My Dashboard](./public/image/Dashboard.png)
 
-<hr>
+<br>
 
 ## Highlighted Features
 
@@ -63,23 +65,141 @@ Please read below to see how the application work and it functionalities.
 
 ![Screenshot of Login/Signup form](./public/image/signup.png)
 
-**RESTful API:** Utilizing Node.js and Express.js, the application provides both GET and POST routes to facilitate seamless interaction with the database.
+<hr>
+
+<br>
+
+
+**Search Bar** User can search for post by it category, this feature is also have a error handler to handle the event if no post found.
 
 ![Resources by category](./public/image/search.gif)
 
-**Database Integration:** MySQL is employed as the relational database, and Sequelize ORM streamlines data management, ensuring efficient and organized storage.
+<hr>
 
-**Deployment on Heroku:** API Adventures is hosted on Heroku, ensuring accessibility and scalability. The deployment includes the necessary data, ensuring a fully functional application.
+<br>
 
-**Polished UI:** The user interface is thoughtfully designed, adhering to best practices in user experience. It ensures an intuitive and visually appealing interaction for users.
+**Responsiveness** The application is responsive, adapting seamlessly to various screen sizes and devices, providing an optimal user experience.
 
-**Responsiveness:** The application is responsive, adapting seamlessly to various screen sizes and devices, providing an optimal user experience.
+
 
 ![screenshot of mobile](./public/image/responsive.gif)
 
+
+
+<hr>
+
+
+
+**Deployment on Heroku:** API Adventures is hosted on Heroku, ensuring accessibility and scalability. The deployment includes the necessary data, ensuring a fully functional application.
+
+
+**Polished UI:** The user interface is thoughtfully designed, adhering to best practices in user experience. It ensures an intuitive and visually appealing interaction for users.
+
+**Environment Variable Security:** API keys and sensitive information are protected using environment variables, adding an extra layer of security to the application.
+
+**Clean Repository:** The project repository adheres to quality coding standards. It demonstrates consistency in file structure, naming conventions, and follows best practices for class and ID naming, indentation, and includes high-quality comments for code documentation.
+
+**Random Photo Search Technology:** This application utilizes the Unsplash API to get a random photo and sets it as a Project or Resource category profile image. The Unsplash API allows us to filter the searches and retrieve a random photo for the user and a search a topic related photo for the resource category.
+
 **Interactivity:** API Adventures engages users by accepting and responding to their inputs. It fosters dynamic interactions to enhance user engagement.
 
+
+
 **MVC Folder Structure:** Following the MVC paradigm, the project maintains a well-organized folder structure. Models, views, and controllers are distinct and logically organized, promoting code maintainability.
+
+<br>
+
+**Database Integration:** MySQL is employed as the relational database, and Sequelize ORM streamlines data management, ensuring efficient and organized storage.
+
+```js
+
+const { Model, DataTypes } = require("sequelize");
+const sequelize = require("../config/connection");
+
+class Comment extends Model {}
+
+Comment.init(
+  {
+    id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      primaryKey: true,
+      autoIncrement: true,
+    },
+    comment: {
+      type: DataTypes.TEXT,
+      allowNull: false,
+    },
+    resource_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: "resource",
+        key: "id",
+      },
+    },
+    createdAt: {
+      type: DataTypes.DATE,
+      defaultValue: DataTypes.NOW, // Set default value to current timestamp
+    },
+    updatedAt: {
+      type: DataTypes.DATE,
+      defaultValue: DataTypes.NOW, // Set default value to current timestamp
+    },
+  },
+  {
+    sequelize,
+    freezeTableName: false,
+    underscored: false,
+    modelName: "comment",
+  }
+);
+
+```
+
+<br>
+
+**RESTFUL API** Utilizing Node.js and Express.js, the application provides both GET and POST routes, here is a snippet of get route for homepage.
+
+```js
+
+router.get("/", async (req, res) => {
+  try {
+    if (req.session.loggedIn) {
+      const dbCategoryData = await Category.findAll({});
+      const categories = dbCategoryData.map((category) =>
+        category.get({ plain: true })
+      );
+      const dbResourceData = await Resource.findAll({
+        include: [
+          { model: User, attributes: ["username"] },
+          { model: Category, attributes: ["category_name"] },
+          { model: Like, attributes: ["user_id"] }
+        ],
+        order: [["createdAt", "DESC"]] // Order resources by creation date
+
+      });
+      const resources = dbResourceData.map((resource)=>
+      resource.get({plain:true}));
+      let data =[];
+      for ( let i = resources.length -1; i >= 0; i--){
+        data.push(resources[i])
+      }
+      res.render("homepage", {
+        categories,
+        loggedIn: req.session.loggedIn,
+        resources: data,
+      });
+    } else {
+      res.status(200).render("welcomepage");
+    }
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+```
+
+<br>
 
 **Secure Password Hashing:** Bcrypt is integrated into mysql to protect user data from unwanted source.
 
@@ -95,6 +215,8 @@ Please read below to see how the application work and it functionalities.
         return updatedUserData;
       }
 ```
+
+<br>
 
 **Authentication with Express-Session and Cookies:** User authentication is a priority, implemented using Express-session and cookies. This ensures secure access to user-specific data and actions.
 
@@ -118,11 +240,8 @@ const sess = {
 
 ```
 
-**Environment Variable Security:** API keys and sensitive information are protected using environment variables, adding an extra layer of security to the application.
+<br>
 
-**Clean Repository:** The project repository adheres to quality coding standards. It demonstrates consistency in file structure, naming conventions, and follows best practices for class and ID naming, indentation, and includes high-quality comments for code documentation.
-
-**Random Photo Search Technology:** This application utilizes the Unsplash API to get a random photo and sets it as a Project or Resource category profile image. The Unsplash API allows us to filter the searches and retrieve a random photo for the user and a search a topic related photo for the resource category.
 
 ```js
 function getPic() {
@@ -158,7 +277,7 @@ function getPic() {
 }
 ```
 
-<hr>
+<br>
 
 ## Installation
 
@@ -190,10 +309,15 @@ mysql -u root -p
 - then you get our data into your database you doing run this in the command line
 
 ```
-run: npm run seed
+npm run seed
 ```
 
-- To start the server, run: node server.js
+- To start the server, run: npm run watch
+```
+npm run watch
+```
+
+<br>
 
 ## Technology Used
 
@@ -240,7 +364,7 @@ run: npm run seed
 
 [Unsplash API](https://unsplash.com/developers)
 
-<hr>
+<br>
 
 ## Learning Points
 
@@ -256,39 +380,56 @@ run: npm run seed
 
 6. Testing with Insomnia: Use tools like Insomnia for testing frontend and backend routes, ensuring proper functionality and identifying potential issues.
 
+
+<br>
+
 ## Tests
 
 This application tested the the front end and backend routes using Insomnia Core application
 
 ![Screenshot of Insomnia Routes Test](./public/image/Screenshot%20Insomnia%20Testing.png)
 
+<br>
+
 ## Contributors
 
-Anna Rose Benedetti
+**Anna Rose Benedetti**
 
-- [Portfolio](https://abenedetti27.github.io/Portfolio/)
-- [LinkedIn](https://www.linkedin.com/in/anna-rose-benedetti/)
-- [GitHub](https://github.com/abenedetti27)
+[Portfolio](https://abenedetti27.github.io/Portfolio/)
 
-Armando Arujo
+[LinkedIn](https://www.linkedin.com/in/anna-rose-benedetti/)
 
-- [Portfolio](https://armand57araujo.github.io/Portfolio/)
-- [LinkedIn](https://www.linkedin.com/in/armand-araujo-a82ba2291/)
-- [GitHub](https://armand57araujo.github.io/Portfolio/)
+[GitHub](https://github.com/abenedetti27)
 
-Andy Zurek
+<hr>
 
-- [Portfolio](https://azurek17.github.io/zurek-portfolio/)
-- [LinkedIn](https://www.linkedin.com/in/andy-zurek-374bb9291/)
-- [GitHub](https://github.com/AZurek17)
+**Armando Arujo**
+
+[Portfolio](https://armand57araujo.github.io/Portfolio/)
+
+[LinkedIn](https://www.linkedin.com/in/armand-araujo-a82ba2291/)
+
+[GitHub](https://armand57araujo.github.io/Portfolio/)
+
+<hr>
+
+**Andy Zurek**
+
+[Portfolio](https://azurek17.github.io/zurek-portfolio/)
+
+[LinkedIn](https://www.linkedin.com/in/andy-zurek-374bb9291/)
+
+[GitHub](https://github.com/AZurek17)
 
 ## Author
 
-Jay Nghiem
+**Jay Nghiem**
 
-- [Portfolio](https://jstudio.tech)
-- [LinkedIn](https://www.linkedin.com/in/thai-nghiem-319292267/)
-- [GitHub](https://github.com/Truecoding4life)
+[Portfolio](https://jstudio.tech)
+
+[LinkedIn](https://www.linkedin.com/in/thai-nghiem-319292267/)
+
+[GitHub](https://github.com/Truecoding4life)
 
 ## License
 

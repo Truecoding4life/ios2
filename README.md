@@ -83,7 +83,7 @@ Please read below to see how the application work and it functionalities.
 
 **Secure Password Hashing:** Bcrypt is integrated into mysql to protect user data from unwanted source.
 
-```
+```js
  async beforeCreate(newUserData) {
         newUserData.password = await bcrypt.hash(newUserData.password, 10);
         return newUserData;
@@ -98,7 +98,7 @@ Please read below to see how the application work and it functionalities.
 
 **Authentication with Express-Session and Cookies:** User authentication is a priority, implemented using Express-session and cookies. This ensures secure access to user-specific data and actions.
 
-```
+```js
 
 const sess = {
   secret: 'Super secret secret',
@@ -124,7 +124,7 @@ const sess = {
 
 **Random Photo Search Technology:** This application utilizes the Unsplash API to get a random photo and sets it as a Project or Resource category profile image. The Unsplash API allows us to filter the searches and retrieve a random photo for the user and a search a topic related photo for the resource category.
 
-```
+```js
 function getPic() {
   const inputCategory = document.getElementById("#inputCategory").val();
   console.log(inputCategory);
@@ -282,7 +282,7 @@ Andy Zurek
 - [LinkedIn](https://www.linkedin.com/in/andy-zurek-374bb9291/)
 - [GitHub](https://github.com/AZurek17)
 
-## Authors
+## Author
 
 Jay Nghiem
 

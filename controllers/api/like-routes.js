@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { Resource, Category, User, Project } = require("../../models");
+const { Resource, Category, User, Project , Like} = require("../../models");
 
 // project create route, tested and working
 router.post("/", async (req, res) => {
@@ -49,6 +49,26 @@ router.delete("/:id", async (req, res) => {
     res.json({ message: "Project deleted successfully" });
   } catch (error) {
     res.status(500).json(error);
+  }
+});
+
+router.get("/:id", async (req, res) => {
+  try {
+    const  likeData = await Resource.findByPk(req.params.id, {
+      include: [
+        {
+          model: Like,
+          attributes: ["id", "resource_id", "user_id"],
+        },
+      ],
+    });
+    
+    // let likes = likeData.get({ plain: true });
+    
+    res.status(200).json(likeData)
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
   }
 });
 

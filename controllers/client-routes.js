@@ -31,6 +31,7 @@ router.get("/", async (req, res) => {
         categories,
         loggedIn: req.session.loggedIn,
         resources: data,
+        user_id: req.session.user_id,
       });
     } else {
       res.status(200).render("welcomepage");
@@ -105,26 +106,8 @@ router.get("/category/:id", async (req, res) => {
   }
 });
 
-// Project route
-router.get("/project/:id", async (req, res) => {
-  try {
-    const dbprojectData = await Project.findByPk(req.params.id, {
-      include: [
-        {
-          model: Project,
-          attributes: ["title", "user_id"],
-          include: [{ model: Project, include: [{ model: User }] }],
-        },
-      ],
-    });
 
-    // const project = dbprojectData.get({ plain: true });
-    // res.render('project', { project, loggedIn: req.session.loggedIn });
-  } catch (err) {
-    console.log(err);
-    res.status(500).json(err);
-  }
-});
+
 
 // Project route
 router.get("/like", async (req, res) => {
@@ -167,7 +150,6 @@ router.get("/login", async (req, res) => {
     // Otherwise, render the 'login' template
     res.status(200).render("login");
   } catch (err) {
-    console.error(err);
     res.status(500).json(err);
   }
 });

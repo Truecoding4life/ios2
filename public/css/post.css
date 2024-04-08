@@ -3,6 +3,8 @@
 .post {
     background-color: #20242bfa;
     font-family: Nunito Sans, sans-serif;
+        box-shadow: 0px 0px 100px rgb(0, 0, 0.2);
+
 }
 
 .post-detail-comment {
@@ -30,6 +32,7 @@
     outline: none;
     background-color: #333233dc;
     color: rgb(136, 160, 130);
+    box-shadow: 0px 0px 100px rgb(0, 0, 0.2);
 
 }
 
@@ -41,12 +44,12 @@
 }
 
 .post-detail{
-    background-color: #201f23c3;
+    background-color: #1c1c1f;
     width: 100%;
     margin: auto;
 }
 .post-detail-comment {
-    background-color: #181819e6;
+    background-color: #181819;
     width: 100%;
     margin: auto;
 }
@@ -128,15 +131,15 @@
     background-color: #4e9b70f5;
     border-radius: 20px;
     margin-top: 15px;
-    box-shadow: 0px 0px 5px 0px #1e1d1d;
+    box-shadow: 0px 0px 100px rgb(0, 0, 0.2);
     color: #9ec69e;
     
 }
 .comment-button{
     border-radius: 0;
-    color: #a1c3ad;
+    color: #101110;
     border-color: none;
-    background-color: rgba(76, 102, 85, 0.693);
+    background-color: rgb(78, 155, 105);
     padding: 10px;
     font-family: Poppins, Courier, monospace;
     width: 100%;
@@ -244,6 +247,11 @@
         display: none;
     }
     
+}
+
+.liked{
+    color: #4b4949e8;
+
 }
 
 @media screen and (max-width: 1200px) {

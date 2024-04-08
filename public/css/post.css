@@ -1,7 +1,7 @@
 
 
 .post {
-    background-color: #20242def;
+    background-color: #20242bfa;
     font-family: Nunito Sans, sans-serif;
 }
 
@@ -12,7 +12,6 @@
 }
 
 .post{
-    background-color: #20242def;
     font-family: Nunito Sans, sans-serif;
     border-radius: 20px;
     padding: 20px;
@@ -35,7 +34,9 @@
 }
 
 .comment-body{
-    background-color: #1c1b1bb9;
+    background-color: rgba(45, 45, 46, 0.933);
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
 
 }
 
@@ -52,7 +53,7 @@
 
 .post-detail, .comment, .comment-warning {
     border-radius: 20px;
-    box-shadow: 0px 0px 5px 0px #1e1d1d;
+    box-shadow: 0px 0px 100px rgb(0, 0, 0.2);
 }
 
 .post-detail {

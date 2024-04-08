@@ -1,4 +1,5 @@
 const router = require("express").Router();
+const { log } = require("handlebars");
 const { Resource, User, Project, Category, Comment, Like } = require("../models");
 
 // home route
@@ -126,13 +127,30 @@ router.get("/project/:id", async (req, res) => {
 });
 
 // Project route
-router.get("/project", async (req, res) => {
+router.get("/like", async (req, res) => {
   try {
-    const projectData = await Project.findAll({
-      where: { user_id: req.session.user_id },
-    });
-    const projects = projectData.map((project) => project.get({ plain: true }));
-    res.render("project", { projects, loggedIn: req.session.loggedIn });
+    const allLikes = await Like.findAll({
+      where: {
+        user_id: req.session.user_id,
+      }
+    })
+    const data = allLikes.map((project) => project.get({ plain: true }));
+    let likedPost = [];
+    for (let i = data.length - 1; i >= 0; i--) {
+      let currentId = data[i].resource_id;
+      let currentPost = await Resource.findByPk(currentId, {
+        include: [
+          {
+            model: User,
+          },
+          { model: Like, attributes: ["id"]},
+        ],
+      });
+      likedPost.push(currentPost.get({ plain: true }));
+    }
+
+    let likeCount = likedPost.length;
+    res.render("project", { likedPost, likeCount, loggedIn: req.session.loggedIn });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);

@@ -1,10 +1,11 @@
-/* Global Styles */
+
 #main-content {
     background-image: url('../image/background.webp');
     color: #fff;
     font-size: 18px;
     background-repeat: no-repeat;
     background-size: cover;
+    
 }
 
 /* Header Styles */
@@ -151,6 +152,13 @@ header {
     background-color: rgba(28, 18, 18, 0.738);
     color: rgb(199, 60, 60);
     border-color: rgb(199, 60, 60);
+}
+
+.like-header{
+    font-size: 20px;
+    color: #cdcacf;
+    font-family: Poppins;
+    font-weight: 700;
 }
 
 /* Card Styles */

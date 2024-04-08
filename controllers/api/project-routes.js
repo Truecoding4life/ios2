@@ -4,13 +4,11 @@ const { Resource, Category, User, Project } = require("../../models");
 // project create route, tested and working
 router.post("/", async (req, res) => {
   try {
-    const newProject = await Project.create({
-      title: req.body.title,
-      description: req.body.description,
-      deployed_url: req.body.deployed_url,
-      repo_url: req.body.repo_url,
-      user_id: req.session.user_id,
-    });
+    const allLikes = await Resource.findAll({
+      where: {
+        user_id: req.session.user_id,
+      }
+    })
     res.status(201).json("You created a new project!");
   } catch (err) {
     console.log(err);
